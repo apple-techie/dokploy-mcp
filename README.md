@@ -223,3 +223,49 @@ The Dokploy MCP Server represents the next evolution in infrastructure managemen
 ## 📜 LICENSE
 
 ISC - Free to use in your dimension
+
+## 🧠 CONSOLIDATED TOOL ARCHITECTURE
+
+The Dokploy MCP uses a powerful consolidated tool architecture that provides comprehensive functionality through a smaller set of high-level tools. This makes it easier for AI assistants to understand and utilize the full capabilities while reducing cognitive load.
+
+### Consolidated Tools
+
+Instead of exposing 200+ individual API endpoints as separate tools, the MCP consolidates functionality into these powerful primary tools:
+
+| TOOL | DESCRIPTION | CAPABILITIES |
+|------|-------------|--------------|
+| `dokploy_project` | Project management | list, get, create, update, delete |
+| `dokploy_application` | Application operations | list, get, create, update, delete, deploy, restart, stop, start |
+| `dokploy_server` | Server management | list, get, create, update, delete, setup, validate, security |
+| `dokploy_docker` | Docker container operations | list, restart, get_config, find_by_app, find_by_label, find_stack |
+| `dokploy_domain` | Domain & certificate management | list, get, create, update, delete, validate, generate |
+| `dokploy_monitoring` | Monitoring & logging | app_status, app_logs, server_metrics, setup |
+| `dokploy_diagnostics` | Diagnostic utilities | test_endpoint, diagnose_502, check_security |
+| `dokploy_deployment` | Deployment operations | deploy, redeploy, rollback |
+| `dokploy_database` | Unified database interface | create, get, start, stop, deploy, update, delete, move, reload, rebuild |
+| `dokploy_backup` | Backup management | create, get, list, update, delete, manual |
+| `dokploy_system` | MCP system management | status, clear_cache, reset_circuit_breaker, metrics |
+
+### How It Works
+
+Each consolidated tool follows a consistent action-based pattern:
+
+```json
+{
+  "name": "dokploy_application",
+  "params": {
+    "action": "restart",
+    "applicationId": "app-123456"
+  }
+}
+```
+
+The server intelligently maps these high-level actions to the appropriate low-level API calls, handling parameter validation and providing helpful error messages.
+
+### Benefits
+
+- **Simplified Mental Model**: LLMs can more easily understand and remember a small set of powerful tools
+- **Consistent Interface**: All tools follow the same action-based pattern
+- **Reduced Token Usage**: Fewer tool descriptions means more tokens available for reasoning
+- **Better Context Management**: Easier to keep track of related operations within the same tool
+- **Enhanced Middleware Capabilities**: The middleware layer can provide advanced features like caching, retries, and circuit breaking
