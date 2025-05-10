@@ -130,25 +130,6 @@ Add the following to your Windsurf MCP configuration file:
 ### Admin Functions
 - `dokploy_admin_setup_monitoring`: Setup monitoring for admin
 
-## Development
-
-### Testing
-To test the API client implementation:
-```
-npm run dev -- test-client.ts
-```
-
-To test specific endpoints:
-```
-npm run dev -- endpoint-test.ts
-```
-
-### Project Structure
-- `src/index.ts`: Main server implementation
-- `src/dokploy-client.ts`: API client for Dokploy
-- `test-client.ts`: Test script for the API client
-- `endpoint-test.ts`: Test script for API endpoints
-
 ## License
 
 ISC
