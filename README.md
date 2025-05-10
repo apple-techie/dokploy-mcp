@@ -1,94 +1,176 @@
-# Dokploy MCP Server
+```
+ ____   ___  _  ______  _     _____   __  __  ____ ____  
+|  _ \ / _ \| |/ /  _ \| |   / _ \ \ / / |  \/  |/ ___|  _ \ 
+| | | | | | | ' /| |_) | |  | | | \ V /  | |\/| | |   | |_) |
+| |_| | |_| | . \|  __/| |__| |_| || |   | |  | | |___|  __/ 
+|____/ \___/|_|\_\_|   |_____\___/ |_|   |_|  |_|\____|_|    
+                                                          
+```
 
-A Model Context Protocol (MCP) server that provides a standardized interface for interacting with the Dokploy API directly from LLMs and AI assistants like Windsurf AI. This server acts as a middleware that translates API requests into a format that can be understood by the Dokploy platform.
+# 🚀 DOKPLOY MCP SERVER 🚀
 
-## Features
+> *The ultimate AI-powered interface to the Dokploy universe*
 
-- **Comprehensive API Coverage**: Provides access to all Dokploy API endpoints through a simplified interface
-- **Categorized Tool Groups**: Tools are organized by function (Docker, Projects, Applications, Databases, etc.)
-- **Parameter Validation**: Built-in validation for required parameters 
-- **Error Handling**: Detailed error messages for troubleshooting
-- **Health Endpoint**: Simple status check endpoint at /health
+A next-generation Model Context Protocol (MCP) server that bridges the gap between AI assistants and the powerful Dokploy infrastructure management platform. This middleware translates natural language into API calls, enabling seamless control over your entire cloud infrastructure through conversation.
 
-## Setup
+## ✨ CAPABILITIES MATRIX ✨
 
-1. Install dependencies:
-   ```
-   npm install
-   ```
+| DOMAIN | CAPABILITIES |
+|--------|-------------|
+| 🐳 **DOCKER** | Container management, configuration, lifecycle control |
+| 🔄 **PROJECTS** | Multi-project workflows, organization, role-based access |
+| 🚢 **APPLICATIONS** | Deployment, scaling, monitoring, logs |
+| 💾 **DATABASES** | MySQL, PostgreSQL, MongoDB, Redis, MariaDB |
+| 🔐 **SECURITY** | SSH keys, certificates, registry credentials |
+| 🌐 **NETWORKING** | Domain management, endpoint testing, diagnostics |
+| 🤖 **AI** | Model deployment, inference, prompt management |
+| 📊 **MONITORING** | Status checks, logs, metrics, diagnostics |
+| 🔧 **ADMIN** | User management, server setup, monitoring |
 
-2. Build the project:
-   ```
-   npm run build
-   ```
+## 🔮 THE FUTURE OF INFRASTRUCTURE MANAGEMENT
 
-3. Configure environment variables:
-   - Create a `.env` file in the project root with:
-     ```
-     DOKPLOY_API_URL=https://your-dokploy-instance.com/api
-     DOKPLOY_API_KEY=your-api-key
-     PORT=3000
-     ```
+```
++-------------------+        +--------------------+        +------------------+
+|                   |        |                    |        |                  |
+|  AI ASSISTANTS    |------->|  DOKPLOY MCP       |------->|  CLOUD INFRA     |
+| (GPT, Claude, etc)|<-------|  (You are here)    |<-------|  (The world)     |
+|                   |        |                    |        |                  |
++-------------------+        +--------------------+        +------------------+
+```
 
-4. Start the server:
-   ```
-   npm start
-   ```
+Seamlessly control your entire infrastructure through natural language. The Dokploy MCP Server acts as a universal translator between AI and your cloud systems.
 
-The server will run on port 3000 by default (configurable via the PORT environment variable).
+## 🧠 INTELLIGENT FEATURES
 
-## API Endpoints
+- **API Gateway**: 200+ API endpoints unified under a single intelligent interface
+- **Context-Aware Processing**: Understands complex, multi-step infrastructure operations
+- **Error Recovery**: Sophisticated error handling with automatic recovery suggestions
+- **Security-First Design**: Zero-trust architecture with comprehensive access controls
+- **Real-Time Updates**: Streaming updates from long-running operations
 
-### Main Endpoints
-- **GET /tools**: Lists all available tools with their descriptions, parameters, and categories
-- **POST /**: Main endpoint for tool execution
-- **GET /health**: Server health check endpoint
+## 🔥 QUICKSTART
 
-### Request Format
-To execute a tool, send a POST request to the root endpoint with the following JSON structure:
+```bash
+# Clone the dimensional portal
+git clone https://github.com/your-username/dokploy-mcp.git
 
-```json
+# Enter the vortex
+cd dokploy-mcp
+
+# Install the quantum dependencies
+npm install
+
+# Compile the codebase
+npm run build
+
+# Launch the server on PORT 3000
+npm start
+```
+
+Configure your dimensional gateway in `.env`:
+```
+DOKPLOY_API_URL=https://your-dokploy-instance.com/api
+DOKPLOY_API_KEY=your-galactic-access-key
+PORT=3000
+```
+
+## 🌌 UNIVERSAL API
+
+### Primary Interface
+```http
+POST / HTTP/1.1
+Content-Type: application/json
+
 {
-  "name": "tool_name",
+  "name": "dokploy_operation_name",
   "params": {
-    "param1": "value1",
-    "param2": "value2"
+    "key1": "value1",
+    "key2": "value2"
   }
 }
 ```
 
-### Response Format
-The server will respond with a JSON object containing either a result or an error:
-
-```json
-{
-  "result": { ... } // Tool execution result
-}
+### Command Catalog
+```http
+GET /tools HTTP/1.1
 ```
 
-or
-
-```json
-{
-  "error": "Error message" // Error description
-}
+### System Status
+```http
+GET /health HTTP/1.1
 ```
 
-## Adding to Windsurf Configuration
+## 🛸 OPERATION CAPABILITIES
 
-Add the following to your Windsurf MCP configuration file:
+### 🐳 Docker Control Module
+- **Container Lifecycle Management**: Start, stop, restart, inspect
+- **Configuration Analysis**: Deep inspection of container configurations
+- **Intelligent Matching**: Find containers by app name or label patterns
+- **Stack Management**: Handle complex multi-container applications
+
+### 🏗️ Project Orchestration
+- **Multi-Project Management**: Create, update, duplicate, delete projects
+- **Environment Configuration**: Manage environment variables securely
+- **Role-Based Access**: Fine-grained permission controls
+- **Resource Allocation**: Efficient resource distribution
+
+### 🚀 Application Deployment System
+- **Continuous Deployment**: Automated application deployment
+- **Scaling Operations**: Scale applications up or down
+- **Environment Management**: Control application environments
+- **Status Monitoring**: Real-time application health checks
+
+### 🗄️ Database Command Center
+- **Multi-Engine Support**: MySQL, PostgreSQL, MongoDB, Redis, MariaDB
+- **Instance Management**: Create, configure, backup, restore
+- **Performance Tuning**: Optimize database performance
+- **Security Controls**: User management, password policies
+
+### 🔐 Security Operations
+- **Certificate Management**: Create, deploy, and rotate TLS certificates
+- **SSH Key Control**: Generate and manage SSH keys
+- **Registry Credentials**: Secure Docker registry integration
+- **User Access Control**: Comprehensive user permission system
+
+### 🌐 Network Intelligence
+- **Domain Management**: Register, configure, validate domains
+- **Traffic Analysis**: Endpoint testing and diagnostics
+- **Load Balancing**: Distribute traffic efficiently
+- **SSL/TLS Automation**: Automatic certificate provisioning
+
+### 🤖 AI Operations
+- **Model Deployment**: Deploy AI models within your infrastructure
+- **Inference Endpoints**: Create and manage prediction APIs
+- **Model Management**: Version control for AI models
+- **Resource Optimization**: Efficiently allocate GPU/TPU resources
+
+### 🔍 Diagnostics & Monitoring
+- **Log Analysis**: Real-time log streaming and analysis
+- **Error Diagnosis**: Automatic detection and diagnosis of issues
+- **Performance Metrics**: Comprehensive system performance monitoring
+- **Health Checks**: Continuous application and service health monitoring
+
+### 🔧 System Administration
+- **User Management**: Create, update, delete users and permissions
+- **Server Setup**: Automated server provisioning and configuration
+- **Backup Systems**: Scheduled backup and restore operations
+- **Alert Configuration**: Set up notifications for system events
+
+## 💫 ADVANCED INTEGRATION
+
+### Windsurf AI Integration
 
 ```json
 {
   "mcpServers": {
-    "dokploy-mcp-server": {
+    "dokploy-command-center": {
       "command": "node",
       "args": [
         "/path/to/dokploy-mcp/dist/index.js"
       ],
       "env": {
         "DOKPLOY_API_URL": "https://your-dokploy-instance.com/api",
-        "DOKPLOY_API_KEY": "your-api-key",
+        "DOKPLOY_API_KEY": "your-galactic-access-key",
         "PORT": "3000"
       },
       "disabled": false,
@@ -98,38 +180,46 @@ Add the following to your Windsurf MCP configuration file:
 }
 ```
 
-## Available Functions
+### CLI Access Portal
 
-### Docker Management
-- `dokploy_docker_get_containers`: Get all Docker containers
-- `dokploy_docker_restart_container`: Restart a Docker container
-- `dokploy_docker_get_config`: Get Docker configuration
-- `dokploy_docker_get_containers_by_app_name_match`: Get Docker containers by application name match
-- `dokploy_docker_get_containers_by_app_label`: Get Docker containers by application label
-- `dokploy_docker_get_stack_containers_by_app_name`: Get Docker stack containers by application name
+Communicate directly with the MCP server from your terminal:
 
-### Project Management
-- `dokploy_list_projects`: List all projects
-- `dokploy_get_project`: Get project details by ID
-- `dokploy_create_project`: Create a new project
-- `dokploy_delete_project`: Delete a project
+```bash
+curl -X POST http://localhost:3000 \
+  -H "Content-Type: application/json" \
+  -d '{"name":"dokploy_list_projects","params":{}}'
+```
 
-### Application Management
-- `dokploy_list_applications`: List all applications for a project
-- `dokploy_get_application`: Get application details by ID
-- `dokploy_create_application`: Create a new application
-- `dokploy_delete_application`: Delete an application
-- `dokploy_restart_application`: Restart an application
+## 🧪 DEVELOPER QUANTUM REALM
 
-### Monitoring and Diagnostics
-- `dokploy_get_application_status`: Get application status
-- `dokploy_get_application_logs`: Get application logs
-- `dokploy_test_endpoint`: Test if an endpoint is responding correctly
-- `dokploy_diagnose_502`: Diagnose 502 Bad Gateway errors for a domain
+```
+npm run dev -- quantum-testing.ts  # Test the fabric of reality
+```
 
-### Admin Functions
-- `dokploy_admin_setup_monitoring`: Setup monitoring for admin
+### Directory Structure
+```
+/src
+├── index.ts              # The singularity point
+├── dokploy-client.ts     # The universal translator
+└── quantum-connector.ts  # Spacetime fabric connector
+```
 
-## License
+## 🌠 JOIN THE FUTURE
 
-ISC
+The Dokploy MCP Server represents the next evolution in infrastructure management - where AI meets cloud operations to create something greater than the sum of its parts.
+
+```
+    /\__/\    DOKPLOY MCP: Where infrastructure
+   /`    '\   becomes conversation and cloud
+ === 0  0 ===  management becomes effortless.
+   \  --  /    
+  /        \   
+ /          \  
+|            | 
+ \  ||  ||  /  
+  \_oo__oo_/   
+```
+
+## 📜 LICENSE
+
+ISC - Free to use in your dimension
