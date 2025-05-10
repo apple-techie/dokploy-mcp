@@ -43,3 +43,7 @@ coverage/
 tmp/
 temp/
 
+# Test files
+test-client.ts
+endpoint-test.ts
+endpoint-test-report-*.json
