@@ -92,7 +92,7 @@ export class QuantumConnector extends EventEmitter {
   private cache: NodeCache;
   private metrics: RequestMetrics[] = [];
   private lastCircuitReset: number = Date.now();
-  private metricFlushInterval: NodeJS.Timeout;
+  private metricFlushInterval: NodeJS.Timeout = setTimeout(() => {}, 0);
 
   /**
    * Create a new QuantumConnector

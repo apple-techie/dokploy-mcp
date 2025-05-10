@@ -8,7 +8,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // Configuration
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3050;
 const DOKPLOY_API_URL = process.env.DOKPLOY_API_URL || 'http://localhost:3000/api';
 const DOKPLOY_API_KEY = process.env.DOKPLOY_API_KEY || '';
 
@@ -26,10 +26,13 @@ const quantumConnector = new QuantumConnector(DOKPLOY_API_URL, DOKPLOY_API_KEY, 
     maxRetries: 2,            // Maximum of 2 retries per request
     initialDelayMs: 200,      // Start with 200ms delay
     maxDelayMs: 2000,         // Max 2 second delay between retries
-    backoffFactor: 2          // Double the delay with each retry
+    backoffFactor: 2,         // Double the delay with each retry
+    retryableStatusCodes: [408, 429, 500, 502, 503, 504]  // Status codes to retry
   },
   cache: {
+    enabled: true,            // Enable caching
     ttlSeconds: 120,          // Cache results for 2 minutes by default
+    maxSize: 1000,            // Maximum number of cached items
     excludedEndpoints: ['/application.logs', '/docker.getContainers'] // Don't cache dynamic endpoints
   }
 });
